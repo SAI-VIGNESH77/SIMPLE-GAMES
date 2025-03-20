@@ -39,4 +39,16 @@ int main() {
     for (char &c : playerChoice) c = tolower(c);
     playerChoice[0] = toupper(playerChoice[0]);
 
-    // Validate
+    // Validate input
+    if (playerChoice != "Rock" && playerChoice != "Paper" && playerChoice != "Scissors") {
+        cout << "Invalid input! Please enter Rock, Paper, or Scissors.\n";
+        return 1;
+    }
+
+    string computerChoice = getComputerChoice();
+    cout << "Computer chose: " << computerChoice << endl;
+
+    cout << determineWinner(playerChoice, computerChoice) << endl;
+
+    return 0;
+}
